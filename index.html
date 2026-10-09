@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gestión del Riesgo Girardota: respuesta al Concejo</title>
+<meta name="description" content="Respuesta de la Secretaría de Infraestructura al cuestionario del Concejo Municipal de Girardota sobre gestión del riesgo de desastres, sesión del 14 de octubre de 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: portada · el oficio como índice de 4 preguntas · por eje: pregunta citada → respuesta corta con cifras → soporte desplegable · acciones · fuentes */
+:root{
+  --verde:#12745C; --verde-2:#148669; --lima:#68C200; --lima-txt:#3E7A00;
+  --bg:#F3F6F4; --surface:#FFFFFF; --surface-2:#E9F1EC; --paper:#FBFCF8; --fg:#16241F; --muted:#51625B; --line:#D5E0DA;
+  --crit:#B5400F; --crit-bg:#FBE9DF; --warn:#A86A00; --warn-bg:#FFF2D6; --ok:#12745C; --ok-bg:#E2F2EA; --info:#2B66B0; --info-bg:#E4EDF8;
+  --num:#12745C;
+  --f-display:'Nunito','Trebuchet MS',Arial,sans-serif;
+  --f-body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1A15; --surface:#13251E; --surface-2:#183027; --paper:#102019; --fg:#E7F1EC; --muted:#A3BBB0; --line:#28443A;
+  --lima-txt:#8FE03A; --crit:#FF8A57; --crit-bg:#3A1E12; --warn:#F2B341; --warn-bg:#352A10; --ok:#5FD3A6; --ok-bg:#12352A; --info:#7FB2F0; --info-bg:#16263A;
+  --num:#5FD3A6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1A15; --surface:#13251E; --surface-2:#183027; --paper:#102019; --fg:#E7F1EC; --muted:#A3BBB0; --line:#28443A;
+  --lima-txt:#8FE03A; --crit:#FF8A57; --crit-bg:#3A1E12; --warn:#F2B341; --warn-bg:#352A10; --ok:#5FD3A6; --ok-bg:#12352A; --info:#7FB2F0; --info-bg:#16263A;
+  --num:#5FD3A6; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px}
+a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--lima);outline-offset:2px}
+/* portada */
+.hero-band{background:#12745C}
+.hero{position:relative;max-width:1180px;margin:0 auto}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.hero-txt{position:absolute;left:0;top:0;bottom:0;width:30.2%;padding:clamp(16px,3vw,44px) clamp(14px,2.2vw,32px);display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1vw,14px);color:#fff}
+.hero-txt .eyebrow{font-weight:700;font-size:clamp(11px,1vw,14px);letter-spacing:.12em;text-transform:uppercase;color:#C9F09A}
+.hero-txt h1{font-weight:900;font-size:clamp(22px,2.8vw,38px)}
+.hero-txt .sub{font-size:clamp(12px,1.15vw,17px);color:#DDF0E7}
+.hero-txt .date{display:inline-block;align-self:flex-start;background:var(--lima);color:#0F2A10;font-weight:800;font-family:var(--f-display);border-radius:999px;padding:4px 14px;font-size:clamp(11px,1vw,15px)}
+@media (max-width:720px){.hero-txt{position:static;width:auto;background:#12745C;padding:20px 16px}}
+/* barra */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:1000;background:var(--verde);box-shadow:0 2px 0 var(--lima)}
+.bar .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px}
+.bar .wrap::-webkit-scrollbar{display:none}
+.bar a{color:#E3F3EA;text-decoration:none;font:700 15px var(--f-body);padding:8px 14px;border-radius:999px;white-space:nowrap}
+.bar a:hover,.bar a.on{background:#fff;color:var(--verde)}
+main{display:flex;flex-direction:column;gap:72px;padding-block:36px 72px}
+section{display:flex;flex-direction:column;gap:22px;scroll-margin-top:68px}
+.kicker{font:800 13px var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--lima-txt)}
+.src{font-size:13px;color:var(--muted)}
+/* el oficio */
+.oficio{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(20px,4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(20px,4vw,48px);box-shadow:0 1px 0 var(--line),0 12px 28px -18px rgba(18,116,92,.35)}
+@media (max-width:860px){.oficio{grid-template-columns:1fr}}
+.oficio .meta{display:flex;flex-direction:column;gap:12px}
+.oficio .meta h2{font-size:clamp(26px,3.2vw,36px);font-weight:900}
+.oficio .meta p{color:var(--muted)}
+.oficio dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:6px 0 0;font-size:15px}
+.oficio dt{font-weight:700;color:var(--muted)}
+.oficio dd{margin:0}
+.qlist{display:flex;flex-direction:column;gap:10px;counter-reset:q}
+.q{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:transform .15s,border-color .15s}
+.q:hover{transform:translateX(4px);border-color:var(--verde-2)}
+.q .no{font:900 30px var(--f-display);color:var(--lima-txt);text-align:center}
+.q b{display:block;font-family:var(--f-display);font-size:17px}
+.q span{color:var(--muted);font-size:14px}
+.q .go{font:800 14px var(--f-display);color:var(--verde-2);white-space:nowrap}
+/* ejes */
+.eje{display:grid;grid-template-columns:72px minmax(0,1fr);gap:clamp(12px,3vw,32px)}
+@media (max-width:720px){.eje{grid-template-columns:1fr}}
+.eje .big{font:900 clamp(56px,8vw,96px)/.9 var(--f-display);color:var(--lima);}
+.eje .body{display:flex;flex-direction:column;gap:20px;min-width:0}
+.pregunta{border-left:5px solid var(--lima);padding:4px 0 4px 18px;display:flex;flex-direction:column;gap:6px}
+.pregunta .t{font:800 14px var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pregunta q{font-family:var(--f-display);font-weight:800;font-size:clamp(19px,2.2vw,24px);quotes:"«" "»";color:var(--fg)}
+.respuesta{font-family:var(--f-display);font-weight:900;font-size:clamp(26px,3.6vw,42px);line-height:1.12;max-width:26ch;color:var(--fg)}
+.respuesta em{font-style:normal;color:var(--num)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card h3{font-size:19px;font-weight:800}
+.kpi .n{font:900 clamp(32px,4vw,46px)/1.05 var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
+.kpi .l{font-weight:700}
+.kpi .s{color:var(--muted);font-size:14px}
+.kpi.alert{background:var(--crit-bg);border-color:transparent}.kpi.alert .n{color:var(--crit)}
+details.soporte{border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}
+details.soporte>summary{list-style:none;cursor:pointer;padding:14px 18px;font:800 16px var(--f-display);color:var(--verde-2);display:flex;align-items:center;gap:10px}
+details.soporte>summary::-webkit-details-marker{display:none}
+details.soporte>summary::before{content:"+";display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--verde);color:#fff;font-size:18px}
+details.soporte[open]>summary::before{content:"–"}
+details.soporte .in{padding:0 18px 18px;display:flex;flex-direction:column;gap:16px}
+.note{border-radius:12px;padding:14px 16px;font-size:15px;color:var(--fg)}
+.note.ok{background:var(--ok-bg);border-left:5px solid var(--ok)}.note.warn{background:var(--warn-bg);border-left:5px solid var(--warn)}.note.info{background:var(--info-bg);border-left:5px solid var(--info)}.note.crit{background:var(--crit-bg);border-left:5px solid var(--crit)}
+.pill{display:inline-block;font:800 12px var(--f-display);letter-spacing:.04em;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.pill.crit{background:var(--crit-bg);color:var(--crit)}.pill.warn{background:var(--warn-bg);color:var(--warn)}.pill.ok{background:var(--ok-bg);color:var(--ok)}.pill.info{background:var(--info-bg);color:var(--info)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface-2);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.num{text-align:right}
+.bars{display:flex;flex-direction:column;gap:8px}
+.brow{display:grid;grid-template-columns:minmax(0,40%) 1fr 52px;align-items:center;gap:10px;font-size:15px}
+.brow .t{height:18px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+.brow .f{display:block;height:100%;background:var(--verde-2);border-radius:5px}
+.brow .f.crit{background:var(--crit)}.brow .f.warn{background:#E0A030}.brow .f.info{background:var(--info)}.brow .f.lima{background:var(--lima)}
+.brow .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:700 14px var(--f-body);padding:7px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#fff}
+.flow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.flow .st{flex:1 1 180px;border-radius:14px;padding:16px;color:#fff;display:flex;flex-direction:column;gap:4px}
+.flow .st b{font-family:var(--f-display);font-size:18px}
+.flow .st span{font-size:14px;opacity:.92}
+.flow .ar{align-self:center;font:900 22px var(--f-display);color:var(--verde-2)}
+@media (max-width:720px){.flow .ar{display:none}}
+.clock{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.clock div{flex:1 1 140px;padding:12px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.clock div:last-child{border-right:0}
+.clock b{font:900 24px var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
+.clock span{font-size:14px;color:var(--muted)}
+.mapwrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:900px){.mapwrap{grid-template-columns:1fr}}
+#map{height:min(60vh,520px);min-height:340px;border-radius:12px;background:var(--surface-2)}
+.legend{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend .sw{display:inline-block;width:26px;height:12px;border-radius:3px}
+select{font:600 15px var(--f-body);padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);max-width:100%}
+.ficha dl{display:grid;grid-template-columns:1fr auto;margin:0}
+.ficha dt,.ficha dd{padding:8px 0;border-bottom:1px solid var(--line);margin:0;font-size:15px}
+.ficha dd{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.lines{display:flex;gap:12px;flex-wrap:wrap}
+.line{display:flex;align-items:center;gap:12px;background:var(--surface);border:2px solid var(--verde);border-radius:14px;padding:12px 18px}
+.line b{font:900 34px var(--f-display);color:var(--num)}
+footer{border-top:4px solid var(--lima);background:#12745C;color:#E3F3EA;padding-block:24px;font-size:14px}
+footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+/* leaflet esencial */
+.leaflet-pane,.leaflet-tile,.leaflet-tile-container,.leaflet-pane>svg,.leaflet-pane>canvas,.leaflet-layer{position:absolute;left:0;top:0}
+.leaflet-container{overflow:hidden;font-family:var(--f-body);-webkit-tap-highlight-color:transparent}
+.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}
+.leaflet-tile{visibility:hidden;user-select:none}.leaflet-tile-loaded{visibility:inherit}
+.leaflet-container img.leaflet-tile{max-width:none!important;max-height:none!important;width:256px;height:256px}
+.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-tooltip-pane{z-index:650}
+.leaflet-control{position:relative;z-index:800;pointer-events:auto;float:left;clear:both}
+.leaflet-top,.leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}
+.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}
+.leaflet-top .leaflet-control{margin-top:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:6px}.leaflet-bottom .leaflet-control{margin-bottom:4px}
+.leaflet-interactive{cursor:pointer}
+.leaflet-zoom-animated{transform-origin:0 0}
+.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.35);border-radius:8px}
+.leaflet-bar a{background:var(--surface);color:var(--fg);border-bottom:1px solid var(--line);width:34px;height:34px;line-height:34px;display:block;text-align:center;text-decoration:none;font:700 18px var(--f-body)}
+.leaflet-bar a:first-child{border-radius:8px 8px 0 0}.leaflet-bar a:last-child{border-radius:0 0 8px 8px;border-bottom:none}
+.leaflet-tooltip{position:absolute;padding:6px 10px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:8px;white-space:nowrap;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.2);font-size:14px}
+.leaflet-control-attribution{font-size:11px;background:rgba(255,255,255,.8);color:#333;padding:0 5px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="hero-band"><header class="hero">
+  <img src="img/portada.jpg" srcset="img/portada_m.jpg 800w, img/portada.jpg 1600w" sizes="(max-width:720px) 100vw, 1180px" alt="Panorámica del valle de Girardota con el lema ¡Girardota, Te Queremos! y el logo de la Alcaldía">
+  <div class="hero-txt">
+    <p class="eyebrow">Respuesta al Concejo Municipal</p>
+    <h1>Gestión del riesgo de desastres</h1>
+    <p class="sub">Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</p>
+    <p class="date">Sesión del 14 de octubre de 2026</p>
+  </div>
+</header></div>
+
+<nav class="bar" aria-label="Contenido">
+  <div class="wrap">
+    <a href="#oficio">El oficio</a>
+    <a href="#eje1">1 · Gestión e intervención</a>
+    <a href="#eje2">2 · Articulación</a>
+    <a href="#eje3">3 · Capacidad y recursos</a>
+    <a href="#eje4">4 · Contingencia y prevención</a>
+    <a href="#acciones">Acciones en curso</a>
+    <a href="#fuentes">Fuentes</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="oficio">
+  <div class="oficio">
+    <div class="meta">
+      <p class="kicker">Citación de la Mesa Directiva</p>
+      <h2>El Concejo preguntó cuatro cosas. Aquí están las respuestas.</h2>
+      <p>Con fundamento en la Ley 136 de 1994, la Ley 1551 de 2012 y el Reglamento Interno, el Concejo citó a la Secretaría de Infraestructura a sesión ordinaria.</p>
+      <dl><dt>Oficio</dt><dd>5 de octubre de 2026</dd><dt>Firma</dt><dd>Presidente del Concejo Municipal</dd><dt>Sesión</dt><dd>Miércoles 14 de octubre, 7:00 a. m.</dd><dt>Lugar</dt><dd>Recinto Manuel de Londoño y Molina</dd></dl>
+    </div>
+    <div class="qlist">
+      <a class="q" href="#eje1"><span class="no">1</span><span><b>Informe de Gestión e Intervención</b><span>Estado actual, avances y atención de emergencias</span></span><span class="go">Ver respuesta ↓</span></a>
+      <a class="q" href="#eje2"><span class="no">2</span><span><b>Articulación Institucional</b><span>Gestión del Riesgo y Cuerpo de Bomberos Voluntarios</span></span><span class="go">Ver respuesta ↓</span></a>
+      <a class="q" href="#eje3"><span class="no">3</span><span><b>Capacidad Operativa y Recursos</b><span>Parque automotor, equipos, convenios y presupuesto</span></span><span class="go">Ver respuesta ↓</span></a>
+      <a class="q" href="#eje4"><span class="no">4</span><span><b>Plan de Contingencia y Prevención</b><span>Vulnerabilidad y zonas de riesgo prioritarias</span></span><span class="go">Ver respuesta ↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EJE 1 ============ -->
+<section id="eje1"><div class="eje"><span class="big" aria-hidden="true">1</span><div class="body">
+  <div class="pregunta"><span class="t">Eje 1 · Informe de Gestión e Intervención</span><q>Presentación del estado actual, avances y atención de emergencias en el municipio.</q></div>
+  <p class="respuesta">En 2026 se han atendido <em>≈325</em> valoraciones y peticiones, <em>546</em> eventos de Bomberos y <em>178</em> reportes del sismo, sin declarar calamidad pública.</p>
+  <div class="grid g4">
+    <div class="card kpi"><span class="n" data-count="325" data-prefix="≈">≈325</span><span class="l">visitas de valoración y respuestas a peticiones</span><span class="s">Gestión del Riesgo, enero a octubre</span></div>
+    <div class="card kpi"><span class="n" data-count="546">546</span><span class="l">eventos atendidos por Bomberos</span><span class="s">enero a julio</span></div>
+    <div class="card kpi"><span class="n" data-count="115">115</span><span class="l">de 178 reportes del sismo con visita o cierre</span><span class="s">corte 5 de octubre</span></div>
+    <div class="card kpi"><span class="n" data-count="0">0</span><span class="l">declaratorias de calamidad pública</span><span class="s">en 2023 y 2024 sí las hubo</span></div>
+  </div>
+  <details class="soporte"><summary>Ver soporte: valoraciones, Bomberos, sismo y metas del Plan de Desarrollo</summary><div class="in">
+    <div class="grid g2">
+      <div class="card"><h3>Valoraciones del primer semestre: 112</h3>
+        <div class="chips" role="group" aria-label="Ver valoraciones"><button class="chip" aria-pressed="true" data-v="tipo">Por tipo</button><button class="chip" aria-pressed="false" data-v="mes">Por mes</button><button class="chip" aria-pressed="false" data-v="origen">Por origen</button><button class="chip" aria-pressed="false" data-v="vereda">Por vereda</button></div>
+        <div class="bars" id="bGRD"></div><p class="src" id="nGRD"></p></div>
+      <div class="card"><h3>Bomberos: 546 eventos por tipo</h3><div class="bars" id="bCBVG"></div><p class="src">Informes mensuales del contrato PS190-2026 verificados por la supervisión. Agosto y septiembre se suman al recibir los informes.</p></div>
+    </div>
+    <div class="grid g2">
+      <div class="card"><h3>Sismo del 10 de agosto (M 7,4): estado de los 178 reportes</h3><div class="bars" id="bSismo"></div>
+        <p>129 reportes en vivienda, 40 sedes educativas y 9 edificaciones públicas. 12 viviendas en estado crítico y 3 evacuadas.</p>
+        <a class="chip" style="align-self:flex-start;text-decoration:none;background:var(--lima);border-color:var(--lima);color:#0F2A10" href="https://alejandramontoyacuartas-ship-it.github.io/tablero-emergencias-girardota/" target="_blank" rel="noopener">Ver el tablero del sismo ↗</a></div>
+      <div class="card"><h3>Recomendaciones a las familias (primer semestre)</h3>
+        <div class="tbl"><table><tbody>
+          <tr><td>Evacuación preventiva</td><td class="num">1</td></tr><tr><td>Evacuación temporal o parcial</td><td class="num">2</td></tr><tr><td>Restricción de uso del inmueble</td><td class="num">3</td></tr><tr><td>Protocolo de evacuación condicionada</td><td class="num">4</td></tr><tr><td>Evacuación definitiva o reasentamiento</td><td class="num">0</td></tr>
+        </tbody></table></div>
+        <div class="note ok">Ningún caso configuró riesgo no mitigable. Seis de cada diez eventos con amenaza identificada fueron de origen socionatural: cortes de talud, llenos y aguas lluvias mal manejadas.</div></div>
+    </div>
+    <div class="card"><h3>Metas del Plan de Desarrollo, programa 2.3.1</h3>
+      <div class="tbl"><table><thead><tr><th>Indicador</th><th class="num">Meta 2026</th><th class="num">Avance</th><th>Estado</th></tr></thead><tbody id="tPDM"></tbody></table></div>
+      <p class="src">Fichas de seguimiento del PDM «Decencia en lo Público», corte 2.º trimestre de 2026.</p></div>
+  </div></details>
+</div></div></section>
+
+<!-- ============ EJE 2 ============ -->
+<section id="eje2"><div class="eje"><span class="big" aria-hidden="true">2</span><div class="body">
+  <div class="pregunta"><span class="t">Eje 2 · Articulación Institucional</span><q>Acciones coordinadas entre la Administración Municipal (Gestión del Riesgo) y el Cuerpo de Bomberos Voluntarios.</q></div>
+  <p class="respuesta">Gestión del Riesgo coordina y Bomberos responde: <em>un contrato</em> vigente, <em>un mando</em> unificado y <em>una cisterna</em> cofinanciada con DAGRAN.</p>
+  <div class="flow">
+    <div class="st" style="background:#0B3D30"><b>Alcalde y CMGRD</b><span>Dirige y declara calamidad · Decreto 097 de 2012</span></div><span class="ar" aria-hidden="true">→</span>
+    <div class="st" style="background:var(--verde)"><b>Coordinación de Gestión del Riesgo</b><span>Secretaría de Infraestructura · activa el puesto de mando unificado</span></div><span class="ar" aria-hidden="true">→</span>
+    <div class="st" style="background:#B5400F"><b>Cuerpo de Bomberos</b><span>Primer respondiente: incendios, rescate, materiales peligrosos y atención prehospitalaria</span></div><span class="ar" aria-hidden="true">→</span>
+    <div class="st" style="background:#0D9771"><b>Comunidad</b><span>Atención, evaluación de daños y cierre del caso</span></div>
+  </div>
+  <details class="soporte"><summary>Ver soporte: acciones conjuntas de 2026 y el incendio del 24 de agosto</summary><div class="in">
+    <div class="grid g2">
+      <div class="card"><h3>Acciones conjuntas en 2026</h3><div class="tbl"><table><tbody>
+        <tr><td><span class="pill ok">Vigente</span></td><td><b>Contrato PS190-2026.</b> Servicio bomberil del 22 de enero al 31 de diciembre, con informes mensuales a la supervisión.</td></tr>
+        <tr><td><span class="pill warn">En ejecución</span></td><td><b>Convenio 008 de 2025 con DAGRAN.</b> Vehículo cisterna y 53 horas de capacitación al cuerpo de Bomberos.</td></tr>
+        <tr><td><span class="pill info">3 sesiones</span></td><td><b>CMGRD.</b> La última, el 18 de agosto: seguimiento al sismo y preparación ante El Niño.</td></tr>
+        <tr><td><span class="pill info">Simulacros</span></td><td>Simulación en la Central La Tasajera (24 de junio) y simulacro programado el 22 de octubre.</td></tr>
+      </tbody></table></div></div>
+      <div class="card"><h3>Incendio industrial del 24 de agosto, San Diego</h3>
+        <div class="clock"><div><b>13:18</b><span>reporte</span></div><div><b>13:35</b><span>llegada de Bomberos</span></div><div><b>15:29</b><span>fuga de gas controlada</span></div><div><b>02:20</b><span>confinado al 95 %</span></div></div>
+        <p>Ocho cuerpos de bomberos (Girardota, Copacabana, Bello, Barbosa, Medellín, Itagüí, Caldas y Sabaneta), con EPM, Policía y Ejército. Perímetro de 2.000 m, 29 personas evacuadas y 33 perros rescatados. El Alcalde impuso medidas preventivas por Resolución 2949 del 21 de septiembre.</p>
+        <p class="src">Informe de atención del Cuerpo de Bomberos (1 de septiembre) y oficio SIR-2026-243.</p></div>
+    </div>
+    <div class="card"><h3>Quién responde en cada escenario del nuevo Plan Municipal</h3><div class="bars" id="bRoles"></div><p class="src">Número de escenarios, de 17, en los que interviene cada entidad. PMGRD 2026, Anexo A7.</p></div>
+  </div></details>
+</div></div></section>
+
+<!-- ============ EJE 3 ============ -->
+<section id="eje3"><div class="eje"><span class="big" aria-hidden="true">3</span><div class="body">
+  <div class="pregunta"><span class="t">Eje 3 · Capacidad Operativa y Recursos</span><q>Estado del parque automotor, equipos de atención de emergencias, vigencia de convenios/comodatos y suficiencia presupuestal.</q></div>
+  <p class="respuesta">El servicio está financiado con <em>$906 millones</em>; la capacidad propia contra incendios no: las dos máquinas están fuera de servicio y la cisterna está en fabricación.</p>
+  <div class="grid g4">
+    <div class="card kpi"><span class="n">$906 M</span><span class="l">contrato de servicio bomberil 2026</span><span class="s">vigente hasta el 31 de diciembre</span></div>
+    <div class="card kpi"><span class="n">$380 M</span><span class="l">vehículo cisterna con DAGRAN</span><span class="s">DAGRAN $200 M · Municipio $180 M</span></div>
+    <div class="card kpi alert"><span class="n">2 de 2</span><span class="l">máquinas contra incendios fuera de servicio</span><span class="s">una obsoleta (2001), una en reparación (2010)</span></div>
+    <div class="card kpi"><span class="n">5</span><span class="l">vehículos operativos</span><span class="s">intervención rápida, ambulancias y transporte</span></div>
+  </div>
+  <details class="soporte"><summary>Ver soporte: parque automotor, convenios y presupuesto</summary><div class="in">
+    <div class="card"><h3>Parque automotor del Cuerpo de Bomberos</h3>
+      <div class="chips" role="group" aria-label="Filtro de vehículos"><button class="chip" aria-pressed="true" data-f="todos">Todos</button><button class="chip" aria-pressed="false" data-f="fuera">Fuera de servicio</button><button class="chip" aria-pressed="false" data-f="activo">Operativos</button></div>
+      <div class="tbl"><table><thead><tr><th>Vehículo</th><th>Uso</th><th class="num">Modelo</th><th>Estado</th></tr></thead><tbody id="tFlota"></tbody></table></div>
+      <p class="src">Inventario del Cuerpo de Bomberos y sesión del CMGRD del 18 de agosto. Personal: 21 trabajadores vinculados más voluntarios. La Alcaldía asume la reparación de mayor valor de la máquina.</p></div>
+    <div class="grid g2">
+      <div class="card"><h3>Vehículo cisterna: avance</h3><div class="bars" id="bCisterna"></div>
+        <div class="note warn">El chasis llegó al taller el 6 de octubre y empezó el montaje del tanque, ampliado a 800 galones sin costo adicional. Falta la matrícula.</div></div>
+      <div class="card"><h3>Recursos 2026 para la gestión del riesgo</h3><div class="bars" id="bPres"></div>
+        <div class="note info">El Fondo Municipal de Gestión del Riesgo (Acuerdo 11 de 2013) está en proceso de reglamentación con apoyo de DAGRAN. La sobretasa bomberil es el 1 % del ICA (Acuerdo 030 de 2013); su recaudo lo certifica la Secretaría de Hacienda.</div></div>
+    </div>
+  </div></details>
+</div></div></section>
+
+<!-- ============ EJE 4 ============ -->
+<section id="eje4"><div class="eje"><span class="big" aria-hidden="true">4</span><div class="body">
+  <div class="pregunta"><span class="t">Eje 4 · Plan de Contingencia y Prevención</span><q>Análisis de vulnerabilidad e identificación de zonas de riesgo prioritarias en Girardota.</q></div>
+  <p class="respuesta">El <em>27 %</em> del territorio tiene amenaza alta por movimientos en masa y <em>4.675</em> habitantes rurales viven en zonas con condición de riesgo.</p>
+  <div class="grid g4">
+    <div class="card kpi"><span class="n">2.237 ha</span><span class="l">amenaza alta por movimientos en masa</span><span class="s">La Holanda: 73 % de la vereda</span></div>
+    <div class="card kpi"><span class="n">370 ha</span><span class="l">amenaza alta por avenida torrencial</span><span class="s">San Diego concentra 79 ha</span></div>
+    <div class="card kpi"><span class="n">280 ha</span><span class="l">amenaza alta por inundación</span><span class="s">70 % por quebradas, no por el río</span></div>
+    <div class="card kpi"><span class="n">18</span><span class="l">escenarios priorizados en el nuevo Plan</span><span class="s">2 en nivel muy alto</span></div>
+  </div>
+  <div class="card"><h3>Zonas prioritarias por vereda</h3>
+    <div class="chips" role="group" aria-label="Indicador del mapa"><button class="chip" aria-pressed="true" data-l="pexpu">Población en zonas con condición de riesgo (%)</button><button class="chip" aria-pressed="false" data-l="expu">Población en zonas con condición de riesgo</button><button class="chip" aria-pressed="false" data-l="mm_pct">Amenaza alta por movimientos en masa (%)</button><button class="chip" aria-pressed="false" data-l="avt_ha">Amenaza alta por avenida torrencial (ha)</button></div>
+    <div class="mapwrap">
+      <div><div id="map" role="application" aria-label="Mapa de veredas de Girardota"></div><div class="legend" id="legend" style="margin-top:8px"></div></div>
+      <div class="ficha" aria-live="polite"><label for="vSel" style="font-weight:700">Vereda o zona</label> <select id="vSel"></select><div id="ficha"></div></div>
+    </div>
+    <p class="src">Estudio Básico de Amenazas (dic-2025) y PMGRD 2026, Anexo A3. Zonas con condición de riesgo: amenaza alta ya ocupada (Decreto 1077 de 2015). Población DANE 2026.</p></div>
+  <details class="soporte"><summary>Ver soporte: escenarios, prevención y planes de contingencia</summary><div class="in">
+    <div class="card"><h3>18 escenarios de riesgo priorizados</h3>
+      <div class="chips" role="group" aria-label="Filtro por nivel"><button class="chip" aria-pressed="true" data-n="todos">Todos</button><button class="chip" aria-pressed="false" data-n="Muy alto">Muy alto</button><button class="chip" aria-pressed="false" data-n="Alto">Alto</button><button class="chip" aria-pressed="false" data-n="Medio">Medio y medio-alto</button></div>
+      <div class="tbl"><table><thead><tr><th class="num">N.º</th><th>Escenario</th><th class="num">Índice</th><th>Nivel</th></tr></thead><tbody id="tEsc"></tbody></table></div>
+      <p class="src">Índice = probabilidad × impacto, escala 1 a 5. * Sube a Alto por consecuencia catastrófica. PMGRD 2026, Anexo A1, sujeto a validación del CMGRD.</p></div>
+    <div class="note ok" style="font-size:16px"><b>Hallazgo para la prevención.</b> De las 17,1 ha con procesos de inestabilidad activos que registra el Estudio Básico, solo 0,01 ha coincide con una zona con condición de riesgo del POT (distancia mediana 114 m). La vigilancia y las obras deben ir donde ocurre el fenómeno, no solo donde el mapa normativo marca riesgo.</div>
+    <div class="grid g2">
+      <div class="card"><h3>Riesgos que el nuevo Plan midió por primera vez</h3><div class="tbl"><table><tbody>
+        <tr><td><b>Incendios de cobertura</b></td><td>27.485 personas en riesgo alto o muy alto</td></tr>
+        <tr><td><b>Sustancias peligrosas</b></td><td>6.468 personas a menos de 100 m del corredor de carga</td></tr>
+        <tr><td><b>Industria en amenaza alta</b></td><td>82 ha industriales, 35 de 55 instalaciones</td></tr>
+      </tbody></table></div></div>
+      <div class="card"><h3>Planes de contingencia 2026</h3><div class="tbl"><table><tbody>
+        <tr><td><span class="pill ok">Adoptado</span></td><td>Primera temporada de más lluvias (firmado en febrero)</td></tr>
+        <tr><td><span class="pill ok">Formulado</span></td><td>Temporada de menos lluvias: incendios y 19 acueductos veredales</td></tr>
+        <tr><td><span class="pill ok">Ejecutado</span></td><td>Festival Equino 2026</td></tr>
+        <tr><td><span class="pill info">Activo</span></td><td>Respuesta al sismo del 10 de agosto</td></tr>
+      </tbody></table></div>
+      <p class="src">Instrumentos vigentes: PMGRD y Estrategia de Respuesta (Decreto 082 de 2017, actualizados en 2020). Nuevo PMGRD en formulación: adopción prevista en noviembre de 2026.</p></div>
+    </div>
+  </div></details>
+</div></div></section>
+
+<section id="acciones">
+  <div><p class="kicker">Control de acciones</p><h2 style="font-size:clamp(26px,3.4vw,38px);font-weight:900">Lo que sigue</h2></div>
+  <div class="tbl"><table><thead><tr><th>Acción</th><th>Responsable</th><th>Estado</th></tr></thead><tbody>
+    <tr><td>Reparar la máquina de bomberos NQR y devolverla al servicio</td><td>Servicios Administrativos y Cuerpo de Bomberos</td><td><span class="pill crit">Prioritaria</span></td></tr>
+    <tr><td>Matricular y entregar el vehículo cisterna</td><td>Infraestructura, DAGRAN y Cuerpo de Bomberos</td><td><span class="pill warn">En curso</span></td></tr>
+    <tr><td>Cerrar los reportes del sismo pendientes de visita</td><td>Coordinación de Gestión del Riesgo</td><td><span class="pill warn">En curso</span></td></tr>
+    <tr><td>Reglamentar el Fondo Municipal de Gestión del Riesgo</td><td>Infraestructura, Hacienda y Jurídica</td><td><span class="pill info">En preparación</span></td></tr>
+    <tr><td>Validar y adoptar el nuevo Plan Municipal de Gestión del Riesgo</td><td>Coordinación de Gestión del Riesgo y CMGRD</td><td><span class="pill warn">Noviembre de 2026</span></td></tr>
+    <tr><td>Contratar el servicio bomberil 2027 sin días sin cobertura</td><td>Secretaría de Gobierno</td><td><span class="pill info">Antes del 1 de enero</span></td></tr>
+  </tbody></table></div>
+  <div class="card" style="flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px"><h3 style="flex:1 1 260px">¿Cómo reportar una emergencia? Llame a las líneas nacionales, que comunican con el organismo del municipio.</h3><div class="lines"><div class="line"><b>123</b><span>Emergencias</span></div><div class="line"><b>119</b><span>Bomberos</span></div></div></div>
+</section>
+
+<section id="fuentes">
+  <div><p class="kicker">Fuentes</p><h2 style="font-size:clamp(24px,3vw,32px);font-weight:900">De dónde salen las cifras</h2></div>
+  <div class="tbl"><table><tbody>
+    <tr><td><b>Valoraciones, Bomberos, contrato, convenio, parque automotor y presupuesto</b></td><td>Oficio SI-2026-476 del 25 de agosto de 2026, informes del convenio 4600018620 con DAGRAN y Plan de Acción 2026 de Infraestructura. ≈325: registro interno de Gestión del Riesgo, enero a octubre.</td></tr>
+    <tr><td><b>Sismo del 10 de agosto</b></td><td>Tablero de manejo de emergencia sísmica del CMGRD, corte al 5 de octubre de 2026; datos del evento: Servicio Geológico Colombiano.</td></tr>
+    <tr><td><b>Incendio del 24 de agosto</b></td><td>Informe de atención del Cuerpo de Bomberos y oficio SIR-2026-243.</td></tr>
+    <tr><td><b>Amenaza, población expuesta y escenarios</b></td><td>Estudio Básico de Amenazas (dic-2025), DANE proyección 2026 y Plan Municipal de Gestión del Riesgo 2026 en formulación (Anexos A1, A3 y A7).</td></tr>
+  </tbody></table></div>
+  <p class="src">Esta página no contiene datos personales.</p>
+</section>
+
+</main>
+
+<footer><div class="wrap"><span>Alcaldía de Girardota · Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</span><span>girardota.gov.co · @alcaldiagirardota</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="data.js"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>n==null?'—':Number(n).toLocaleString('es-CO',{maximumFractionDigits:1});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function bars(el,rows,max,lab){max=max||Math.max(...rows.map(r=>r[1]));el.innerHTML=rows.map(([l,v,c,t])=>`<div class="brow"><span>${l}</span><span class="t"><span class="f ${c||''}" style="width:${(100*v/max).toFixed(1)}%"></span></span><span class="v">${t||fmt(v)}</span></div>`).join('');}
+
+/* eje 1 */
+const GRD={tipo:[['Afectación estructural de vivienda',53],['Movimientos en masa',38,'crit'],['Inundaciones y encharcamientos',8,'info'],['Otras valoraciones y asistencia',13]],
+ mes:[['Enero',12],['Febrero',27],['Marzo',22],['Abril',9],['Mayo',21],['Junio',21]],
+ origen:[['Socionatural',48,'crit'],['Natural geológico',24],['Natural hidrometeorológico',9,'info'],['Asistencia técnica',31]],
+ vereda:[['San Andrés',8],['La Palma',7],['La Meseta',6],['San Esteban',5],['Manga Arriba',5],['Loma de los Ochoa',5],['Mercedes Ábrego',3],['San Diego',3],['Jamundí',3]]};
+const NOTE={tipo:'Sin crecientes súbitas ni vendavales en el semestre.',mes:'Febrero fue el mes de mayor demanda.',origen:'Socionatural: ladera o cauce intervenido por acción humana.',vereda:'Veredas con 3 o más valoraciones.'};
+function grd(v){bars($('#bGRD'),GRD[v]);$('#nGRD').textContent=NOTE[v];}
+grd('tipo');
+$$('[data-v]').forEach(c=>c.addEventListener('click',()=>{$$('[data-v]').forEach(x=>x.setAttribute('aria-pressed',x===c));grd(c.dataset.v);}));
+bars($('#bCBVG'),[['Atención prehospitalaria',251,'info'],['Accidentes de tránsito',106,'info'],['Rescate de animales',51],['Traslado de pacientes',29,'info'],['Apoyo a eventos masivos',28],['Talas por riesgo',18],['Control de quemas',17],['Incendios estructurales',13,'crit'],['Derrames de hidrocarburos',11,'crit'],['Otros',22]]);
+bars($('#bSismo'),[['Atendido, sin riesgo',73],['Inspeccionado, con afectación',30,'warn'],['Crítico',12,'crit'],['En atención',2,'warn'],['Pendiente de visita',61,'info']]);
+const PDM=[['Solicitudes tramitadas',50,160,'ok','Superada'],['Estudios de riesgo',1,2,'ok','Superada'],['Hogares con ayuda humanitaria',10,10,'ok','Cumplida'],['Emergencias atendidas',8,6,'warn','75 %'],['Obras de reducción (cuatrienio)',8,5,'warn','62,5 %'],['Instancias asistidas',4,3,'warn','75 %'],['Sistemas de alerta temprana',2,0,'crit','En diseño']];
+$('#tPDM').innerHTML=PDM.map(r=>`<tr><td>${r[0]}</td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td><span class="pill ${r[3]}">${r[4]}</span></td></tr>`).join('');
+
+/* eje 2 */
+bars($('#bRoles'),[['Transporte y Tránsito',14],['Cuerpo de Bomberos',13,'crit'],['Protección Social',12],['Infraestructura',11],['Salud',10],['Gobierno',7]],17);
+
+/* eje 3 */
+const FLOTA=[['Camión Ford','Máquina contra incendios',2001,'fuera','Obsoleto, fuera de servicio'],['Camión NQR','Máquina de bomberos',2010,'fuera','En reparación'],['Camioneta D-Max','Intervención rápida',2019,'activo','En servicio'],['Camioneta Frontier','Ambulancia',2022,'activo','En servicio'],['Camioneta Master','Ambulancia',2017,'activo','En servicio'],['Campero Land Cruiser','Transporte de personal',1997,'activo','En servicio'],['Moto Rocket 125','Intervención rápida',2017,'activo','En servicio']];
+function flota(f){$('#tFlota').innerHTML=FLOTA.filter(r=>f==='todos'||r[3]===f).map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td><td><span class="pill ${r[3]==='fuera'?'crit':'ok'}">${r[4]}</span></td></tr>`).join('');}
+flota('todos');
+$$('[data-f]').forEach(c=>c.addEventListener('click',()=>{$$('[data-f]').forEach(x=>x.setAttribute('aria-pressed',x===c));flota(c.dataset.f);}));
+bars($('#bCisterna'),[['Chasis',100,'','Listo'],['Instrumentación',100,'','Lista'],['Tanque',70,'warn','En curso'],['Bomba',50,'warn','En curso'],['Montaje y pruebas',8,'crit','Inicia']],100);
+bars($('#bPres'),[['Servicio bomberil (PS190)',906,'crit','$906 M'],['Plan de acción Gestión del Riesgo',360,'','$360 M'],['Aporte municipal a la cisterna',180,'lima','$180 M']]);
+
+/* eje 4 */
+const ESC=[[1,'Movimientos en masa',20,'Muy alto'],[2,'Avenidas torrenciales',20,'Muy alto'],[3,'Inundación por quebradas y drenaje urbano',16,'Alto'],[4,'Crecientes súbitas',15,'Alto'],[5,'Incendios de cobertura vegetal',14,'Alto'],[6,'Contaminación atmosférica',14,'Alto'],[7,'Desabastecimiento de agua',12,'Alto'],[8,'Incendios estructurales e industriales',12,'Alto'],[9,'Sustancias y mercancías peligrosas',12,'Alto'],[10,'Caída de rocas',12,'Alto'],[11,'Abejas africanizadas',12,'Alto'],[18,'Desbordamiento del río Aburrá',12,'Alto'],[12,'Tecnológico detonado por amenaza natural *',10,'Alto'],[13,'Sismos *',10,'Alto'],[14,'Dengue y vectores',10.5,'Medio-alto'],[15,'Aglomeraciones y eventos masivos',9,'Medio'],[16,'Vendavales y granizadas',9,'Medio'],[17,'Subsidencia minera',9,'Medio']];
+const LV={'Muy alto':'crit','Alto':'warn','Medio-alto':'info','Medio':'ok'};
+function esc(n){$('#tEsc').innerHTML=ESC.filter(r=>n==='todos'||(n==='Medio'?r[3].startsWith('Medio'):r[3]===n)).map(r=>`<tr><td class="num">${r[0]}</td><td>${r[1]}</td><td class="num"><b>${fmt(r[2])}</b></td><td><span class="pill ${LV[r[3]]}">${r[3]}</span></td></tr>`).join('');}
+esc('todos');
+$$('[data-n]').forEach(c=>c.addEventListener('click',()=>{$$('[data-n]').forEach(x=>x.setAttribute('aria-pressed',x===c));esc(c.dataset.n);}));
+
+/* contadores */
+function countUp(el){const to=+el.dataset.count,pre=el.dataset.prefix||'';if(reduce||!to)return;const t0=performance.now(),d=900;el.textContent=pre+'0';function step(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=pre+fmt(Math.round(to*e));if(k<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);io.unobserve(e.target);}}),{threshold:.6});$$('[data-count]').forEach(el=>io.observe(el));
+ const nav=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('.bar a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}),{rootMargin:'-35% 0px -60% 0px'});
+ ['oficio','eje1','eje2','eje3','eje4','acciones','fuentes'].forEach(id=>nav.observe(document.getElementById(id)));}
+
+/* mapa */
+const D=window.DATA||{},G=window.GEO||{features:[]};
+const LAY={pexpu:['Población en zonas con condición de riesgo','%'],expu:['Población en zonas con condición de riesgo',' hab.'],mm_pct:['Amenaza alta por movimientos en masa','%'],avt_ha:['Amenaza alta por avenida torrencial',' ha']};
+const RAMP=['#FFF4D9','#FCD49A','#F5A25D','#DD6A2F','#A8360F'];
+const TILDE={'San Andres':'San Andrés','Jamundi':'Jamundí','El Paraiso':'El Paraíso','Mercedes Abrego':'Mercedes Ábrego'};
+let cur='pexpu',sel=null,map,geo,breaks=[];
+const vk=G.features.filter(f=>f.properties.tipo==='vereda').map(f=>f.properties.key);
+const nm={urbano:'Zona urbana (cabecera)'};G.features.forEach(f=>{if(f.properties.tipo==='vereda')nm[f.properties.key]=TILDE[f.properties.nombre]||f.properties.nombre;});
+const keyOf=f=>f.properties.tipo==='perimetro_urbano'?'urbano':f.properties.key;
+const val=k=>k==='urbano'?null:(D[k]||{})[cur];
+function brk(){const v=vk.map(val).filter(x=>x>0).sort((a,b)=>a-b);breaks=[...new Set([.2,.4,.6,.8].map(q=>v[Math.floor(q*(v.length-1))]))].filter(b=>b>0);}
+function col(v){if(!v)return '#F2F5F3';let i=0;while(i<breaks.length&&v>breaks[i])i++;return RAMP[i+(4-breaks.length)];}
+function sty(f){if(f.properties.tipo==='limite_municipal')return{color:'#12745C',weight:3,fill:false,interactive:false};const k=keyOf(f);if(k==='urbano')return{color:k===sel?'#68C200':'#12745C',weight:k===sel?4:2,dashArray:'4 3',fillColor:'#7FA79A',fillOpacity:.45};return{color:k===sel?'#68C200':'#ffffff',weight:k===sel?4:1.2,fillColor:col(val(k)),fillOpacity:.85};}
+function leg(){const n=breaks.length+1,b=[0,...breaks],u=LAY[cur][1];$('#legend').innerHTML=`<b style="color:var(--fg)">${LAY[cur][0]}</b>`+b.map((x,i)=>`<span><span class="sw" style="background:${RAMP[i+(5-n)]}"></span> ${i===0?'hasta '+fmt(breaks[0]):i===n-1?'más de '+fmt(breaks[i-1]):fmt(breaks[i-1])+'–'+fmt(breaks[i])}</span>`).join('')+'<span><span class="sw" style="background:#7FA79A"></span> cabecera</span>';}
+function ficha(k){sel=k;if(geo)geo.setStyle(sty);$('#vSel').value=k||'';if(!k){$('#ficha').innerHTML='';return;}const d=D[k]||{},u=k==='urbano';const r=(l,v,s='')=>`<dt>${l}</dt><dd>${v==null?'—':fmt(v)+s}</dd>`;
+ $('#ficha').innerHTML=`<h3 style="font-size:22px;margin:10px 0 4px">${nm[k]}</h3><dl>${r('Habitantes (DANE 2026)',d.pob)}${u?'<dt>En zonas con condición de riesgo</dt><dd>4.006 – 9.704</dd>':r('En zonas con condición de riesgo',d.expu,' hab.')+r('Porcentaje de la población',d.pexpu,' %')}${u?'':r('Amenaza alta por movimientos en masa',d.mm_pct,' % de la vereda')+r('Amenaza alta por avenida torrencial',d.avt_ha,' ha')}${r('Reportes del sismo',d.sismo||0)}${r('Valoraciones 1.er semestre',d.vis)}</dl>${u?'<p class="src">Dato urbano de confianza baja: la cartografía urbana representa manzanas, no viviendas.</p>':''}`;}
+function init(){if(!window.L){$('#map').innerHTML='<p style="padding:16px">El mapa necesita conexión a internet.</p>';return;}
+ map=L.map('map',{zoomSnap:.25,minZoom:11,scrollWheelZoom:false});
+ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:'Esri, HERE, Garmin, © OpenStreetMap'}).addTo(map);
+ brk();geo=L.geoJSON(G,{style:sty,onEachFeature:(f,l)=>{if(f.properties.tipo==='limite_municipal')return;const k=keyOf(f);l.bindTooltip(()=>{const v=val(k);return `<b>${nm[k]}</b>`+(k==='urbano'?'':`<br>${LAY[cur][0]}: ${v==null?'—':fmt(v)+LAY[cur][1]}`);},{sticky:true});l.on('click',()=>ficha(k));}}).addTo(map);
+ const b=geo.getBounds();map.fitBounds(b,{padding:[8,8]});map.setMaxBounds(b.pad(.4));leg();}
+$('#vSel').innerHTML='<option value="">— Elegir —</option><option value="urbano">Zona urbana (cabecera)</option>'+vk.slice().sort((a,b)=>nm[a].localeCompare(nm[b],'es')).map(k=>`<option value="${k}">${nm[k]}</option>`).join('');
+$('#vSel').addEventListener('change',e=>ficha(e.target.value||null));
+$$('[data-l]').forEach(c=>c.addEventListener('click',()=>{$$('[data-l]').forEach(x=>x.setAttribute('aria-pressed',x===c));cur=c.dataset.l;if(geo){brk();geo.setStyle(sty);leg();}}));
+init();ficha('portachuelo');
+})();
+</script>
+</body>
+</html>

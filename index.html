@@ -207,10 +207,10 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 <!-- ============ EJE 1 ============ -->
 <section id="eje1"><div class="eje"><span class="big" aria-hidden="true">1</span><div class="body">
   <div class="pregunta"><span class="t">Eje 1 · Informe de Gestión e Intervención</span><q>Presentación del estado actual, avances y atención de emergencias en el municipio.</q></div>
-  <p class="respuesta">En 2026 se han atendido <em>≈325</em> valoraciones y peticiones, <em>546</em> eventos de Bomberos y <em>178</em> reportes del sismo, sin declarar calamidad pública.</p>
+  <p class="respuesta">En 2026 se han atendido <em>≈325</em> valoraciones y peticiones, <em>824</em> eventos de Bomberos y <em>178</em> reportes del sismo, sin declarar calamidad pública.</p>
   <div class="grid g4">
     <div class="card kpi"><span class="n" data-count="325" data-prefix="≈">≈325</span><span class="l">visitas de valoración y respuestas a peticiones</span><span class="s">Gestión del Riesgo, enero a octubre</span></div>
-    <div class="card kpi"><span class="n" data-count="546">546</span><span class="l">eventos atendidos por Bomberos</span><span class="s">enero a julio</span></div>
+    <div class="card kpi"><span class="n" data-count="824">824</span><span class="l">eventos atendidos por Bomberos</span><span class="s">enero a agosto</span></div>
     <div class="card kpi"><span class="n" data-count="115">115</span><span class="l">de 178 reportes del sismo con visita o cierre</span><span class="s">corte 5 de octubre</span></div>
     <div class="card kpi"><span class="n" data-count="0">0</span><span class="l">declaratorias de calamidad pública</span><span class="s">en 2023 y 2024 sí las hubo</span></div>
   </div>
@@ -219,7 +219,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
       <div class="card"><h3>Valoraciones del primer semestre: 112</h3>
         <div class="chips" role="group" aria-label="Ver valoraciones"><button class="chip" aria-pressed="true" data-v="tipo">Por tipo</button><button class="chip" aria-pressed="false" data-v="mes">Por mes</button><button class="chip" aria-pressed="false" data-v="origen">Por origen</button><button class="chip" aria-pressed="false" data-v="vereda">Por vereda</button></div>
         <div class="bars" id="bGRD"></div><p class="src" id="nGRD"></p></div>
-      <div class="card"><h3>Bomberos: 546 eventos por tipo</h3><div class="bars" id="bCBVG"></div><p class="src">Informes mensuales del contrato PS190-2026 verificados por la supervisión. Agosto y septiembre se suman al recibir los informes.</p></div>
+      <div class="card"><h3>Bomberos: 824 eventos, enero a agosto</h3><div class="chips" role="group" aria-label="Ver eventos de Bomberos"><button class="chip" aria-pressed="true" data-cb="tipo">Por tipo</button><button class="chip" aria-pressed="false" data-cb="mes">Por mes</button></div><div class="bars" id="bCBVG"></div><p class="src" id="nCBVG"></p><p class="src">Boletines mensuales de emergencias del Cuerpo de Bomberos Voluntarios de Girardota. Septiembre se suma al recibir el boletín.</p></div>
     </div>
     <div class="grid g2">
       <div class="card"><h3>Sismo del 10 de agosto (M 7,4): estado de los 178 reportes</h3><div class="bars" id="bSismo"></div>
@@ -338,13 +338,14 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     <tr><td>Validar y adoptar el nuevo Plan Municipal de Gestión del Riesgo</td><td>Coordinación de Gestión del Riesgo y CMGRD</td><td><span class="pill warn">Noviembre de 2026</span></td></tr>
     <tr><td>Contratar el servicio bomberil 2027 sin días sin cobertura</td><td>Secretaría de Gobierno</td><td><span class="pill info">Antes del 1 de enero</span></td></tr>
   </tbody></table></div>
-  <div class="card" style="flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px"><h3 style="flex:1 1 260px">¿Cómo reportar una emergencia? Llame directamente al Cuerpo de Bomberos Voluntarios de Girardota o a la línea única 123.</h3><div class="lines"><div class="line"><b>123</b><span>Emergencias</span></div><div class="line"><b><a href="tel:+573217585242" style="text-decoration:none">321 758 5242</a></b><span>Cuerpo de Bomberos Voluntarios de Girardota</span></div></div></div>
+  <div class="card" style="flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px"><h3 style="flex:1 1 260px">¿Cómo reportar una emergencia? Llame directamente a la línea de atención del Cuerpo de Bomberos Voluntarios de Girardota.</h3><div class="lines"><div class="line"><b><a href="tel:+573217585242" style="text-decoration:none">321 758 5242</a></b><span>Cuerpo de Bomberos Voluntarios de Girardota (celular)</span></div><div class="line"><b><a href="tel:+576044447281" style="text-decoration:none">604 444 7281</a></b><span>Cuerpo de Bomberos (fijo)</span></div></div></div>
 </section>
 
 <section id="fuentes">
   <div><p class="kicker">Fuentes</p><h2 style="font-size:clamp(24px,3vw,32px);font-weight:900">De dónde salen las cifras</h2></div>
   <div class="tbl"><table><tbody>
-    <tr><td><b>Valoraciones, Bomberos, contrato, convenio, parque automotor y presupuesto</b></td><td>Oficio SI-2026-476 del 25 de agosto de 2026, informes del convenio 4600018620 con DAGRAN y Plan de Acción 2026 de Infraestructura. ≈325: registro interno de Gestión del Riesgo, enero a octubre.</td></tr>
+    <tr><td><b>Eventos atendidos por Bomberos</b></td><td>Boletines mensuales de emergencias del Cuerpo de Bomberos Voluntarios de Girardota, enero a agosto de 2026.</td></tr>
+    <tr><td><b>Valoraciones, contrato, convenio, parque automotor y presupuesto</b></td><td>Oficio SI-2026-476 del 25 de agosto de 2026, informes del convenio 4600018620 con DAGRAN y Plan de Acción 2026 de Infraestructura. ≈325: registro interno de Gestión del Riesgo, enero a octubre.</td></tr>
     <tr><td><b>Sismo del 10 de agosto</b></td><td>Tablero de manejo de emergencia sísmica del CMGRD, corte al 5 de octubre de 2026; datos del evento: Servicio Geológico Colombiano.</td></tr>
     <tr><td><b>Incendio del 24 de agosto</b></td><td>Informe de atención del Cuerpo de Bomberos y oficio SIR-2026-243.</td></tr>
     <tr><td><b>Amenaza, población expuesta y escenarios</b></td><td>Estudio Básico de Amenazas (dic-2025), DANE proyección 2026 y Plan Municipal de Gestión del Riesgo 2026 en formulación (Anexos A1, A3 y A7).</td></tr>
@@ -374,7 +375,12 @@ const NOTE={tipo:'Sin crecientes súbitas ni vendavales en el semestre.',mes:'Fe
 function grd(v){bars($('#bGRD'),GRD[v]);$('#nGRD').textContent=NOTE[v];}
 grd('tipo');
 $$('[data-v]').forEach(c=>c.addEventListener('click',()=>{$$('[data-v]').forEach(x=>x.setAttribute('aria-pressed',x===c));grd(c.dataset.v);}));
-bars($('#bCBVG'),[['Atención prehospitalaria',251,'info'],['Accidentes de tránsito',106,'info'],['Rescate de animales',51],['Traslado de pacientes',29,'info'],['Apoyo a eventos masivos',28],['Talas por riesgo',18],['Control de quemas',17],['Incendios estructurales',13,'crit'],['Derrames de hidrocarburos',11,'crit'],['Otros',22]]);
+const CB={tipo:[['Atención prehospitalaria',308,'info'],['Accidentes de tránsito',159,'info'],['Rescate animal',66],['Eventos masivos y acompañamientos',58],['Prevención e inspecciones',42,'lima'],['Traslados y servicio de ambulancia',40,'info'],['Árboles: tala, poda y caída',30],['Quemas',25,'warn'],['Accidentes laborales',24,'info'],['Materiales peligrosos y gas',23,'crit'],['Incendios forestales y de interfaz',20,'crit'],['Incendios estructurales',16,'crit'],['Otros (abejas, rescate de personas, otros incendios)',13]],
+ mes:[['Enero',98],['Febrero',79],['Marzo',111],['Abril',85],['Mayo',103],['Junio',92],['Julio',100],['Agosto',156,'crit']]};
+const CBN={tipo:'824 eventos de enero a agosto. Seis de cada diez son de salud y movilidad.',mes:'Agosto fue el mes de mayor demanda (156), un 63 % por encima del promedio de enero a julio, con el sismo y el incendio industrial.'};
+function cb(v){bars($('#bCBVG'),CB[v]);$('#nCBVG').textContent=CBN[v];}
+cb('tipo');
+$$('[data-cb]').forEach(c=>c.addEventListener('click',()=>{$$('[data-cb]').forEach(x=>x.setAttribute('aria-pressed',x===c));cb(c.dataset.cb);}));
 bars($('#bSismo'),[['Atendido, sin riesgo',73],['Inspeccionado, con afectación',30,'warn'],['Crítico',12,'crit'],['En atención',2,'warn'],['Pendiente de visita',61,'info']]);
 const PDM=[['Solicitudes tramitadas',50,160,'ok','Superada'],['Estudios de riesgo',1,2,'ok','Superada'],['Hogares con ayuda humanitaria',10,10,'ok','Cumplida'],['Emergencias atendidas',8,6,'warn','75 %'],['Obras de reducción (cuatrienio)',8,5,'warn','62,5 %'],['Instancias asistidas',4,3,'warn','75 %'],['Sistemas de alerta temprana',2,0,'crit','En diseño']];
 $('#tPDM').innerHTML=PDM.map(r=>`<tr><td>${r[0]}</td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td><span class="pill ${r[3]}">${r[4]}</span></td></tr>`).join('');

@@ -6,7 +6,7 @@
 <title>Gestión del Riesgo Girardota: respuesta al Concejo</title>
 <meta name="description" content="Respuesta de la Secretaría de Infraestructura al cuestionario del Concejo Municipal de Girardota sobre gestión del riesgo de desastres, sesión del 14 de octubre de 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: portada · el oficio como índice de 4 preguntas · por eje: pregunta citada → respuesta corta con cifras → soporte desplegable · acciones · fuentes */
 :root{
@@ -14,8 +14,8 @@
   --bg:#F3F6F4; --surface:#FFFFFF; --surface-2:#E9F1EC; --paper:#FBFCF8; --fg:#16241F; --muted:#51625B; --line:#D5E0DA;
   --crit:#B5400F; --crit-bg:#FBE9DF; --warn:#A86A00; --warn-bg:#FFF2D6; --ok:#12745C; --ok-bg:#E2F2EA; --info:#2B66B0; --info-bg:#E4EDF8;
   --num:#12745C;
-  --f-display:'Nunito','Trebuchet MS',Arial,sans-serif;
-  --f-body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+  --f-display:'Arial Narrow','Archivo Narrow','Arial Nova Cond',Arial,sans-serif;
+  --f-body:'Arial Narrow','Archivo Narrow','Arial Nova Cond',Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0C1A15; --surface:#13251E; --surface-2:#183027; --paper:#102019; --fg:#E7F1EC; --muted:#A3BBB0; --line:#28443A;
@@ -41,7 +41,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
 .hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .hero-txt{position:absolute;left:0;top:0;bottom:0;width:30.2%;padding:clamp(16px,3vw,44px) clamp(14px,2.2vw,32px);display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1vw,14px);color:#fff}
 .hero-txt .eyebrow{font-weight:700;font-size:clamp(11px,1vw,14px);letter-spacing:.12em;text-transform:uppercase;color:#C9F09A}
-.hero-txt h1{font-weight:900;font-size:clamp(22px,2.8vw,38px)}
+.hero-txt h1{font-weight:700;font-size:clamp(22px,2.8vw,38px)}
 .hero-txt .sub{font-size:clamp(12px,1.15vw,17px);color:#DDF0E7}
 .hero-txt .date{display:inline-block;align-self:flex-start;background:var(--lima);color:#0F2A10;font-weight:800;font-family:var(--f-display);border-radius:999px;padding:4px 14px;font-size:clamp(11px,1vw,15px)}
 @media (max-width:720px){.hero-txt{position:static;width:auto;background:#12745C;padding:20px 16px}}
@@ -59,7 +59,7 @@ section{display:flex;flex-direction:column;gap:22px;scroll-margin-top:68px}
 .oficio{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(20px,4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(20px,4vw,48px);box-shadow:0 1px 0 var(--line),0 12px 28px -18px rgba(18,116,92,.35)}
 @media (max-width:860px){.oficio{grid-template-columns:1fr}}
 .oficio .meta{display:flex;flex-direction:column;gap:12px}
-.oficio .meta h2{font-size:clamp(26px,3.2vw,36px);font-weight:900}
+.oficio .meta h2{font-size:clamp(26px,3.2vw,36px);font-weight:700}
 .oficio .meta p{color:var(--muted)}
 .oficio dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:6px 0 0;font-size:15px}
 .oficio dt{font-weight:700;color:var(--muted)}
@@ -67,26 +67,26 @@ section{display:flex;flex-direction:column;gap:22px;scroll-margin-top:68px}
 .qlist{display:flex;flex-direction:column;gap:10px;counter-reset:q}
 .q{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:transform .15s,border-color .15s}
 .q:hover{transform:translateX(4px);border-color:var(--verde-2)}
-.q .no{font:900 30px var(--f-display);color:var(--lima-txt);text-align:center}
+.q .no{font:700 30px var(--f-display);color:var(--lima-txt);text-align:center}
 .q b{display:block;font-family:var(--f-display);font-size:17px}
 .q span{color:var(--muted);font-size:14px}
 .q .go{font:800 14px var(--f-display);color:var(--verde-2);white-space:nowrap}
 /* ejes */
 .eje{display:grid;grid-template-columns:72px minmax(0,1fr);gap:clamp(12px,3vw,32px)}
 @media (max-width:720px){.eje{grid-template-columns:1fr}}
-.eje .big{font:900 clamp(56px,8vw,96px)/.9 var(--f-display);color:var(--lima);}
+.eje .big{font:700 clamp(56px,8vw,96px)/.9 var(--f-display);color:var(--lima);}
 .eje .body{display:flex;flex-direction:column;gap:20px;min-width:0}
 .pregunta{border-left:5px solid var(--lima);padding:4px 0 4px 18px;display:flex;flex-direction:column;gap:6px}
 .pregunta .t{font:800 14px var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .pregunta q{font-family:var(--f-display);font-weight:800;font-size:clamp(19px,2.2vw,24px);quotes:"«" "»";color:var(--fg)}
-.respuesta{font-family:var(--f-display);font-weight:900;font-size:clamp(26px,3.6vw,42px);line-height:1.12;max-width:26ch;color:var(--fg)}
+.respuesta{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,3.6vw,42px);line-height:1.12;max-width:26ch;color:var(--fg)}
 .respuesta em{font-style:normal;color:var(--num)}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
 .g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
 .card h3{font-size:19px;font-weight:800}
-.kpi .n{font:900 clamp(32px,4vw,46px)/1.05 var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
+.kpi .n{font:700 clamp(32px,4vw,46px)/1.05 var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
 .kpi .l{font-weight:700}
 .kpi .s{color:var(--muted);font-size:14px}
 .kpi.alert{background:var(--crit-bg);border-color:transparent}.kpi.alert .n{color:var(--crit)}
@@ -119,12 +119,12 @@ tr:last-child td{border-bottom:0}
 .flow .st{flex:1 1 180px;border-radius:14px;padding:16px;color:#fff;display:flex;flex-direction:column;gap:4px}
 .flow .st b{font-family:var(--f-display);font-size:18px}
 .flow .st span{font-size:14px;opacity:.92}
-.flow .ar{align-self:center;font:900 22px var(--f-display);color:var(--verde-2)}
+.flow .ar{align-self:center;font:700 22px var(--f-display);color:var(--verde-2)}
 @media (max-width:720px){.flow .ar{display:none}}
 .clock{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
 .clock div{flex:1 1 140px;padding:12px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
 .clock div:last-child{border-right:0}
-.clock b{font:900 24px var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
+.clock b{font:700 24px var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
 .clock span{font-size:14px;color:var(--muted)}
 .mapwrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
 @media (max-width:900px){.mapwrap{grid-template-columns:1fr}}
@@ -148,7 +148,7 @@ select{font:600 15px var(--f-body);padding:9px 12px;border-radius:10px;border:1p
 .gp-obra{width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:19px solid #F5B301;filter:drop-shadow(0 1px 1px rgba(0,0,0,.6))}
 @media (min-width:1400px){.capas label{font-size:16px}.fotos figcaption{font-size:16px}}
 .line{display:flex;align-items:center;gap:12px;background:var(--surface);border:2px solid var(--verde);border-radius:14px;padding:12px 18px}
-.line b{font:900 34px var(--f-display);color:var(--num)}
+.line b{font:700 34px var(--f-display);color:var(--num)}
 footer{border-top:4px solid var(--lima);background:#12745C;color:#E3F3EA;padding-block:24px;font-size:14px}
 footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 /* leaflet esencial */
@@ -224,6 +224,22 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
   details.soporte .in{padding:0 22px 22px}
   footer{font-size:16px}
 }
+/* ===== Identidad Alcaldía de Girardota (plantilla oficial) ===== */
+body{font-stretch:condensed}
+h1,h2,h3,.kpi .n,.respuesta,.eje .big,.q .no,.line b,.clock b{font-weight:700;letter-spacing:0}
+.bar{box-shadow:none;border-bottom:6px solid transparent;border-image:linear-gradient(90deg,#68C200 0 18%,#0D9771 18% 100%) 1}
+.bar a{font-weight:700}
+.kicker{letter-spacing:.14em}
+.head,.oficio .meta{position:relative}
+.marca-iconos{display:block;width:84px;height:auto;opacity:.9}
+.oficio .meta{background:url(img/iconos.png) no-repeat right bottom/96px auto;padding-bottom:8px}
+footer.alcaldia{background:#FFFFFF;color:#3D4A45;border-top:0;padding-block:28px 0}
+footer.alcaldia .wrap{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+footer.alcaldia .franja{flex:1 1 420px;display:flex;flex-direction:column;min-width:0}
+footer.alcaldia .franja p{background:#E7E7E7;padding:14px 18px;font-size:16px;color:#3D4A45}
+footer.alcaldia .franja span{display:block;height:8px;background:linear-gradient(90deg,#68C200 0 22%,#0D9771 22% 100%)}
+footer.alcaldia img{display:block;width:min(100%,560px);height:auto}
+@media (min-width:1400px){footer.alcaldia .franja p{font-size:19px}.marca-iconos{width:110px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -415,7 +431,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 </div></div></section>
 
 <section id="acciones">
-  <div><p class="kicker">Control de acciones</p><h2 style="font-size:clamp(26px,3.4vw,38px);font-weight:900">Lo que sigue</h2></div>
+  <div><p class="kicker">Control de acciones</p><h2 style="font-size:clamp(26px,3.4vw,38px);font-weight:700">Lo que sigue</h2></div>
   <div class="tbl"><table><thead><tr><th>Acción</th><th>Responsable</th><th>Estado</th></tr></thead><tbody>
     <tr><td>Reparar la máquina de bomberos NQR y devolverla al servicio</td><td>Servicios Administrativos y Cuerpo de Bomberos</td><td><span class="pill crit">Prioritaria</span></td></tr>
     <tr><td>Matricular y entregar el vehículo cisterna</td><td>Infraestructura, DAGRAN y Cuerpo de Bomberos</td><td><span class="pill warn">En curso</span></td></tr>
@@ -428,7 +444,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 </section>
 
 <section id="fuentes">
-  <div><p class="kicker">Fuentes</p><h2 style="font-size:clamp(24px,3vw,32px);font-weight:900">De dónde salen las cifras</h2></div>
+  <div><p class="kicker">Fuentes</p><h2 style="font-size:clamp(24px,3vw,32px);font-weight:700">De dónde salen las cifras</h2></div>
   <div class="tbl"><table><tbody>
     <tr><td><b>Eventos atendidos por Bomberos</b></td><td>Boletines mensuales de emergencias del Cuerpo de Bomberos Voluntarios de Girardota, enero a agosto de 2026.</td></tr>
     <tr><td><b>Valoraciones, contrato, convenio, parque automotor y presupuesto</b></td><td>Oficio SI-2026-476 del 25 de agosto de 2026, informes del convenio 4600018620 con DAGRAN y Plan de Acción 2026 de Infraestructura. ≈325: registro interno de Gestión del Riesgo, enero a octubre.</td></tr>
@@ -442,7 +458,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 
 </main>
 
-<footer><div class="wrap"><span>Alcaldía de Girardota · Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</span><span>girardota.gov.co · @alcaldiagirardota</span></div></footer>
+<footer class="alcaldia"><div class="wrap"><div class="franja"><p>Alcaldía de Girardota · Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</p><span></span></div><img src="img/marca_footer.png" alt="girardota.gov.co · @alcaldiagirardota · Alcaldía de Girardota"></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="data.js"></script>

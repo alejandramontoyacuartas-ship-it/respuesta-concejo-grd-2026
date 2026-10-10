@@ -158,6 +158,61 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 .leaflet-bar a:first-child{border-radius:8px 8px 0 0}.leaflet-bar a:last-child{border-radius:0 0 8px 8px;border-bottom:none}
 .leaflet-tooltip{position:absolute;padding:6px 10px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:8px;white-space:nowrap;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.2);font-size:14px}
 .leaflet-control-attribution{font-size:11px;background:rgba(255,255,255,.8);color:#333;padding:0 5px}
+/* ===== Proyección: ancho completo y letra grande en pantallas anchas ===== */
+.wrap{max-width:none;padding-inline:clamp(16px,3.2vw,72px)}
+.hero{max-width:none}
+.hero-txt .eyebrow{font-size:clamp(11px,1vw,22px)}
+.hero-txt h1{font-size:clamp(22px,3vw,64px)}
+.hero-txt .sub{font-size:clamp(12px,1.2vw,26px)}
+.hero-txt .date{font-size:clamp(11px,1.05vw,22px);padding:.3em 1em}
+@media (min-width:1400px){
+  body{font-size:19px}
+  .bar a{font-size:18px;padding:10px 18px}
+  .kicker{font-size:16px}
+  .head{max-width:1200px}
+  .head h2{font-size:clamp(38px,2.8vw,56px)}
+  .head p{font-size:21px;max-width:80ch}
+  .card{padding:26px;gap:14px}
+  .card h3{font-size:23px}
+  .kpi .n{font-size:clamp(46px,3.6vw,72px)}
+  .kpi .l{font-size:19px}
+  .kpi .s{font-size:16px}
+  .src{font-size:15px}
+  .note{font-size:18px}
+  table{font-size:18px}
+  th{font-size:15px}
+  th,td{padding:12px 16px}
+  .brow{font-size:18px;grid-template-columns:minmax(0,38%) 1fr 64px}
+  .brow .t{height:24px}
+  .chip{font-size:16px;padding:9px 16px}
+  .pill{font-size:14px}
+  select{font-size:17px}
+  .ficha dt,.ficha dd{font-size:18px}
+  .legend{font-size:15px}
+  #map{height:min(72vh,820px)}
+  .line b{font-size:42px}
+  .line span{font-size:18px}
+  .ev h3{font-size:23px}
+  .ev .d{font-size:15px}
+  .ev p,.ev ul{font-size:19px;max-width:95ch}
+  .respuesta{font-size:clamp(42px,3.2vw,64px);max-width:30ch}
+  .pregunta q{font-size:clamp(24px,1.8vw,34px)}
+  .pregunta .t{font-size:16px}
+  .eje{grid-template-columns:120px minmax(0,1fr)}
+  .eje .big{font-size:clamp(96px,7vw,150px)}
+  .q b{font-size:21px}
+  .q span{font-size:16px}
+  .q .no{font-size:38px}
+  .oficio .meta h2{font-size:clamp(36px,2.6vw,52px)}
+  .oficio dl{font-size:18px}
+  .flow .st b{font-size:22px}
+  .flow .st span{font-size:17px}
+  .clock b{font-size:30px}
+  .clock span{font-size:16px}
+  details.soporte>summary{font-size:19px;padding:18px 22px}
+  details.soporte .in{padding:0 22px 22px}
+  footer{font-size:16px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>

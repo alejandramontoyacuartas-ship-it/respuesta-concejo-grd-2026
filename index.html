@@ -136,6 +136,17 @@ select{font:600 15px var(--f-body);padding:9px 12px;border-radius:10px;border:1p
 .ficha dt,.ficha dd{padding:8px 0;border-bottom:1px solid var(--line);margin:0;font-size:15px}
 .ficha dd{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
 .lines{display:flex;gap:12px;flex-wrap:wrap}
+.fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
+.fotos figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.fotos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.fotos figcaption{font-size:14px;color:var(--muted)}
+.capas{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.capas label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;cursor:pointer}
+.capas input{accent-color:var(--verde);width:18px;height:18px}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.3)}
+.tri{display:inline-block;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid #F5B301}
+.gp-obra{width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:19px solid #F5B301;filter:drop-shadow(0 1px 1px rgba(0,0,0,.6))}
+@media (min-width:1400px){.capas label{font-size:16px}.fotos figcaption{font-size:16px}}
 .line{display:flex;align-items:center;gap:12px;background:var(--surface);border:2px solid var(--verde);border-radius:14px;padding:12px 18px}
 .line b{font:900 34px var(--f-display);color:var(--num)}
 footer{border-top:4px solid var(--lima);background:#12745C;color:#E3F3EA;padding-block:24px;font-size:14px}
@@ -286,6 +297,14 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
         </tbody></table></div>
         <div class="note ok">Ningún caso configuró riesgo no mitigable. Seis de cada diez eventos con amenaza identificada fueron de origen socionatural: cortes de talud, llenos y aguas lluvias mal manejadas.</div></div>
     </div>
+    <div class="card"><h3>Avances: obras de mitigación terminadas en Los Veleros</h3>
+      <p>Respuesta a la creciente torrencial del 13 de junio de 2025, en el límite de San Esteban y La Mata. Ambas obras están finalizadas; la última inspección fue el 15 de septiembre de 2026.</p>
+      <div class="fotos">
+        <figure><img src="img/obras/los_veleros_gaviones.jpg" alt="Muro de gaviones que protege la vía en el sector Los Veleros" loading="lazy"><figcaption>Contención vial con gaviones</figcaption></figure>
+        <figure><img src="img/obras/los_veleros_via.jpg" alt="Vía protegida por la obra de gaviones en Los Veleros" loading="lazy"><figcaption>Vía protegida por la obra</figcaption></figure>
+        <figure><img src="img/obras/los_veleros_disipador.jpg" alt="Canal disipador de energía junto a la Escuela Rural San Esteban" loading="lazy"><figcaption>Disipador de energía</figcaption></figure>
+      </div>
+      <p class="src">Geoportal GRD Girardota, capa «Obras de mitigación». Fuente: Secretaría de Infraestructura.</p></div>
     <div class="card"><h3>Metas del Plan de Desarrollo, programa 2.3.1</h3>
       <div class="tbl"><table><thead><tr><th>Indicador</th><th class="num">Meta 2026</th><th class="num">Avance</th><th>Estado</th></tr></thead><tbody id="tPDM"></tbody></table></div>
       <p class="src">Fichas de seguimiento del PDM «Decencia en lo Público», corte 2.º trimestre de 2026.</p></div>
@@ -328,8 +347,13 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     <div class="card kpi"><span class="n">$380 M</span><span class="l">vehículo cisterna con DAGRAN</span><span class="s">DAGRAN $200 M · Municipio $180 M</span></div>
     <div class="card kpi alert"><span class="n">2 de 2</span><span class="l">máquinas contra incendios fuera de servicio</span><span class="s">una obsoleta (2001), una en reparación (2010)</span></div>
     <div class="card kpi"><span class="n">5</span><span class="l">vehículos operativos</span><span class="s">intervención rápida, ambulancias y transporte</span></div>
+    <div class="card kpi"><span class="n">92</span><span class="l">hidrantes en operación para Bomberos</span><span class="s">de 94 en la red de EPM</span></div>
   </div>
-  <details class="soporte"><summary>Ver soporte: parque automotor, convenios y presupuesto</summary><div class="in">
+  <details class="soporte"><summary>Ver soporte: parque automotor, hidrantes, convenios y presupuesto</summary><div class="in">
+    <div class="card"><h3>Red de hidrantes: el agua disponible para atender incendios</h3>
+      <div class="bars" id="bHid"></div>
+      <p>94 hidrantes de agua potable de la red de acueducto de EPM: 92 en operación y 2 en construcción. 51 son de 75 mm, 18 de 100 mm y 25 de 150 mm. Se pueden ver en el mapa del eje 4.</p>
+      <p class="src">Geoportal GRD Girardota, capa «Hidrantes», con datos del servicio público de EPM.</p></div>
     <div class="card"><h3>Parque automotor del Cuerpo de Bomberos</h3>
       <div class="chips" role="group" aria-label="Filtro de vehículos"><button class="chip" aria-pressed="true" data-f="todos">Todos</button><button class="chip" aria-pressed="false" data-f="fuera">Fuera de servicio</button><button class="chip" aria-pressed="false" data-f="activo">Operativos</button></div>
       <div class="tbl"><table><thead><tr><th>Vehículo</th><th>Uso</th><th class="num">Modelo</th><th>Estado</th></tr></thead><tbody id="tFlota"></tbody></table></div>
@@ -352,26 +376,33 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     <div class="card kpi"><span class="n">370 ha</span><span class="l">amenaza alta por avenida torrencial</span><span class="s">San Diego concentra 79 ha</span></div>
     <div class="card kpi"><span class="n">280 ha</span><span class="l">amenaza alta por inundación</span><span class="s">70 % por quebradas, no por el río</span></div>
     <div class="card kpi"><span class="n">18</span><span class="l">escenarios priorizados en el nuevo Plan</span><span class="s">2 en nivel muy alto</span></div>
+    <div class="card kpi"><span class="n">52</span><span class="l">puntos críticos levantados en campo</span><span class="s">San Andrés, El Socorro y La Holanda encabezan</span></div>
   </div>
   <div class="card"><h3>Zonas prioritarias por vereda</h3>
-    <div class="chips" role="group" aria-label="Indicador del mapa"><button class="chip" aria-pressed="true" data-l="pexpu">Población en zonas con condición de riesgo (%)</button><button class="chip" aria-pressed="false" data-l="expu">Población en zonas con condición de riesgo</button><button class="chip" aria-pressed="false" data-l="mm_pct">Amenaza alta por movimientos en masa (%)</button><button class="chip" aria-pressed="false" data-l="avt_ha">Amenaza alta por avenida torrencial (ha)</button></div>
+    <div class="chips" role="group" aria-label="Indicador del mapa"><button class="chip" aria-pressed="true" data-l="pexpu">Población en zonas con condición de riesgo (%)</button><button class="chip" aria-pressed="false" data-l="expu">Población en zonas con condición de riesgo</button><button class="chip" aria-pressed="false" data-l="mm_pct">Amenaza alta por movimientos en masa (%)</button><button class="chip" aria-pressed="false" data-l="avt_ha">Amenaza alta por avenida torrencial (ha)</button><button class="chip" aria-pressed="false" data-l="pcrit">Puntos críticos por vereda</button></div>
+    <div class="capas" role="group" aria-label="Capas del geoportal"><span class="src" style="font-weight:700">Capas del geoportal:</span><label><input type="checkbox" id="cPuntos" checked><span class="dot" style="background:#1F2A44"></span> Puntos críticos (52)</label><label><input type="checkbox" id="cSiata" checked><span class="dot" style="background:#2B66B0"></span> Monitoreo SIATA (10)</label><label><input type="checkbox" id="cObras" checked><span class="tri"></span> Obras de mitigación (2)</label><label><input type="checkbox" id="cHid"><span class="dot" style="background:#D7263D"></span> Hidrantes (94)</label></div>
     <div class="mapwrap">
       <div><div id="map" role="application" aria-label="Mapa de veredas de Girardota"></div><div class="legend" id="legend" style="margin-top:8px"></div></div>
       <div class="ficha" aria-live="polite"><label for="vSel" style="font-weight:700">Vereda o zona</label> <select id="vSel"></select><div id="ficha"></div></div>
     </div>
-    <p class="src">Estudio Básico de Amenazas (dic-2025) y PMGRD 2026, Anexo A3. Zonas con condición de riesgo: amenaza alta ya ocupada (Decreto 1077 de 2015). Población DANE 2026.</p></div>
+    <p class="src">Estudio Básico de Amenazas (dic-2025) y PMGRD 2026, Anexo A3. Zonas con condición de riesgo: amenaza alta ya ocupada (Decreto 1077 de 2015). Población DANE 2026. Puntos, estaciones, obras e hidrantes: Geoportal GRD Girardota.</p></div>
   <details class="soporte"><summary>Ver soporte: escenarios, prevención y planes de contingencia</summary><div class="in">
     <div class="card"><h3>18 escenarios de riesgo priorizados</h3>
       <div class="chips" role="group" aria-label="Filtro por nivel"><button class="chip" aria-pressed="true" data-n="todos">Todos</button><button class="chip" aria-pressed="false" data-n="Muy alto">Muy alto</button><button class="chip" aria-pressed="false" data-n="Alto">Alto</button><button class="chip" aria-pressed="false" data-n="Medio">Medio y medio-alto</button></div>
       <div class="tbl"><table><thead><tr><th class="num">N.º</th><th>Escenario</th><th class="num">Índice</th><th>Nivel</th></tr></thead><tbody id="tEsc"></tbody></table></div>
       <p class="src">Índice = probabilidad × impacto, escala 1 a 5. * Sube a Alto por consecuencia catastrófica. PMGRD 2026, Anexo A1, sujeto a validación del CMGRD.</p></div>
-    <div class="note ok" style="font-size:16px"><b>Hallazgo para la prevención.</b> De las 17,1 ha con procesos de inestabilidad activos que registra el Estudio Básico, solo 0,01 ha coincide con una zona con condición de riesgo del POT (distancia mediana 114 m). La vigilancia y las obras deben ir donde ocurre el fenómeno, no solo donde el mapa normativo marca riesgo.</div>
+    <div class="note ok" style="font-size:16px"><b>Hallazgo para la prevención.</b> De las 17,1 ha con procesos de inestabilidad activos que registra el Estudio Básico, solo 0,01 ha coincide con una zona con condición de riesgo del POT (distancia mediana 114 m). El geoportal lo confirma con una fuente independiente: ninguno de los 27 puntos críticos de inestabilidad levantados en campo está dentro de esas zonas (distancia mediana 126 m). La vigilancia y las obras deben ir donde ocurre el fenómeno, no solo donde el mapa normativo marca riesgo.</div>
     <div class="grid g2">
       <div class="card"><h3>Riesgos que el nuevo Plan midió por primera vez</h3><div class="tbl"><table><tbody>
         <tr><td><b>Incendios de cobertura</b></td><td>27.485 personas en riesgo alto o muy alto</td></tr>
         <tr><td><b>Sustancias peligrosas</b></td><td>6.468 personas a menos de 100 m del corredor de carga</td></tr>
         <tr><td><b>Industria en amenaza alta</b></td><td>82 ha industriales, 35 de 55 instalaciones</td></tr>
       </tbody></table></div></div>
+      <div class="card"><h3>Red de monitoreo y alerta temprana</h3><div class="tbl"><table><tbody>
+        <tr><td><span class="pill info">4</span></td><td>Sensores de nivel de SIATA: quebradas Telesfora, El Limonar y El Salado, y río Aburrá en el puente de Girardota</td></tr>
+        <tr><td><span class="pill info">6</span></td><td>Pluviómetros de SIATA, varios en sedes educativas rurales</td></tr>
+        <tr><td><span class="pill warn">En diseño</span></td><td>Sistema de alerta temprana de la quebrada La Correa: punto óptimo del sensor con 3 a 8 minutos de aviso y 3 sirenas, la principal sobre el núcleo de San Andrés</td></tr>
+      </tbody></table></div><p class="src">Geoportal GRD Girardota, capas SIATA y SAT La Correa.</p></div>
       <div class="card"><h3>Planes de contingencia 2026</h3><div class="tbl"><table><tbody>
         <tr><td><span class="pill ok">Adoptado</span></td><td>Primera temporada de más lluvias (firmado en febrero)</td></tr>
         <tr><td><span class="pill ok">Formulado</span></td><td>Temporada de menos lluvias: incendios y 19 acueductos veredales</td></tr>
@@ -403,6 +434,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     <tr><td><b>Valoraciones, contrato, convenio, parque automotor y presupuesto</b></td><td>Oficio SI-2026-476 del 25 de agosto de 2026, informes del convenio 4600018620 con DAGRAN y Plan de Acción 2026 de Infraestructura. ≈325: registro interno de Gestión del Riesgo, enero a octubre.</td></tr>
     <tr><td><b>Sismo del 10 de agosto</b></td><td>Tablero de manejo de emergencia sísmica del CMGRD, corte al 5 de octubre de 2026; datos del evento: Servicio Geológico Colombiano.</td></tr>
     <tr><td><b>Incendio del 24 de agosto</b></td><td>Informe de atención del Cuerpo de Bomberos y oficio SIR-2026-243.</td></tr>
+    <tr><td><b>Puntos críticos, obras, hidrantes y red de monitoreo</b></td><td>Geoportal de Gestión del Riesgo de Girardota: 52 puntos críticos levantados en campo dentro del municipio (se publican tipo, vereda y año, sin direcciones), obras de mitigación, red SIATA y red de hidrantes de EPM.</td></tr>
     <tr><td><b>Amenaza, población expuesta y escenarios</b></td><td>Estudio Básico de Amenazas (dic-2025), DANE proyección 2026 y Plan Municipal de Gestión del Riesgo 2026 en formulación (Anexos A1, A3 y A7).</td></tr>
   </tbody></table></div>
   <p class="src">Esta página no contiene datos personales.</p>
@@ -414,6 +446,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="data.js"></script>
+<script src="geoportal.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -466,7 +499,10 @@ if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.fo
 
 /* mapa */
 const D=window.DATA||{},G=window.GEO||{features:[]};
-const LAY={pexpu:['Población en zonas con condición de riesgo','%'],expu:['Población en zonas con condición de riesgo',' hab.'],mm_pct:['Amenaza alta por movimientos en masa','%'],avt_ha:['Amenaza alta por avenida torrencial',' ha']};
+const LAY={pexpu:['Población en zonas con condición de riesgo','%'],expu:['Población en zonas con condición de riesgo',' hab.'],mm_pct:['Amenaza alta por movimientos en masa','%'],avt_ha:['Amenaza alta por avenida torrencial',' ha'],pcrit:['Puntos críticos del geoportal','']};
+Object.entries(window.GP_PCRIT||{}).forEach(([k,v])=>{(D[k]=D[k]||{}).pcrit=v;});
+const GPd=window.GP||{puntos:[],hidrantes:[],siata:[],obras:[]};
+bars($('#bHid'),[['Circuito Girardota',39],['Circuito El Totumo',37],['Circuito San Esteban',18]],39);
 const RAMP=['#FFF4D9','#FCD49A','#F5A25D','#DD6A2F','#A8360F'];
 const TILDE={'San Andres':'San Andrés','Jamundi':'Jamundí','El Paraiso':'El Paraíso','Mercedes Abrego':'Mercedes Ábrego'};
 let cur='pexpu',sel=null,map,geo,breaks=[];
@@ -479,12 +515,19 @@ function col(v){if(!v)return '#F2F5F3';let i=0;while(i<breaks.length&&v>breaks[i
 function sty(f){if(f.properties.tipo==='limite_municipal')return{color:'#12745C',weight:3,fill:false,interactive:false};const k=keyOf(f);if(k==='urbano')return{color:k===sel?'#68C200':'#12745C',weight:k===sel?4:2,dashArray:'4 3',fillColor:'#7FA79A',fillOpacity:.45};return{color:k===sel?'#68C200':'#ffffff',weight:k===sel?4:1.2,fillColor:col(val(k)),fillOpacity:.85};}
 function leg(){const n=breaks.length+1,b=[0,...breaks],u=LAY[cur][1];$('#legend').innerHTML=`<b style="color:var(--fg)">${LAY[cur][0]}</b>`+b.map((x,i)=>`<span><span class="sw" style="background:${RAMP[i+(5-n)]}"></span> ${i===0?'hasta '+fmt(breaks[0]):i===n-1?'más de '+fmt(breaks[i-1]):fmt(breaks[i-1])+'–'+fmt(breaks[i])}</span>`).join('')+'<span><span class="sw" style="background:#7FA79A"></span> cabecera</span>';}
 function ficha(k){sel=k;if(geo)geo.setStyle(sty);$('#vSel').value=k||'';if(!k){$('#ficha').innerHTML='';return;}const d=D[k]||{},u=k==='urbano';const r=(l,v,s='')=>`<dt>${l}</dt><dd>${v==null?'—':fmt(v)+s}</dd>`;
- $('#ficha').innerHTML=`<h3 style="font-size:22px;margin:10px 0 4px">${nm[k]}</h3><dl>${r('Habitantes (DANE 2026)',d.pob)}${u?'<dt>En zonas con condición de riesgo</dt><dd>4.006 – 9.704</dd>':r('En zonas con condición de riesgo',d.expu,' hab.')+r('Porcentaje de la población',d.pexpu,' %')}${u?'':r('Amenaza alta por movimientos en masa',d.mm_pct,' % de la vereda')+r('Amenaza alta por avenida torrencial',d.avt_ha,' ha')}${r('Reportes del sismo',d.sismo||0)}${r('Valoraciones 1.er semestre',d.vis)}</dl>${u?'<p class="src">Dato urbano de confianza baja: la cartografía urbana representa manzanas, no viviendas.</p>':''}`;}
+ $('#ficha').innerHTML=`<h3 style="font-size:22px;margin:10px 0 4px">${nm[k]}</h3><dl>${r('Habitantes (DANE 2026)',d.pob)}${u?'<dt>En zonas con condición de riesgo</dt><dd>4.006 – 9.704</dd>':r('En zonas con condición de riesgo',d.expu,' hab.')+r('Porcentaje de la población',d.pexpu,' %')}${u?'':r('Amenaza alta por movimientos en masa',d.mm_pct,' % de la vereda')+r('Amenaza alta por avenida torrencial',d.avt_ha,' ha')}${r('Reportes del sismo',d.sismo||0)}${r('Valoraciones 1.er semestre',d.vis)}${r('Puntos críticos del geoportal',d.pcrit||0)}</dl>${u?'<p class="src">Dato urbano de confianza baja: la cartografía urbana representa manzanas, no viviendas.</p>':''}`;}
 function init(){if(!window.L){$('#map').innerHTML='<p style="padding:16px">El mapa necesita conexión a internet.</p>';return;}
  map=L.map('map',{zoomSnap:.25,minZoom:11,scrollWheelZoom:false});
  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:'Esri, HERE, Garmin, © OpenStreetMap'}).addTo(map);
  brk();geo=L.geoJSON(G,{style:sty,onEachFeature:(f,l)=>{if(f.properties.tipo==='limite_municipal')return;const k=keyOf(f);l.bindTooltip(()=>{const v=val(k);return `<b>${nm[k]}</b>`+(k==='urbano'?'':`<br>${LAY[cur][0]}: ${v==null?'—':fmt(v)+LAY[cur][1]}`);},{sticky:true});l.on('click',()=>ficha(k));}}).addTo(map);
- const b=geo.getBounds();map.fitBounds(b,{padding:[8,8]});map.setMaxBounds(b.pad(.4));leg();}
+ const b=geo.getBounds();map.fitBounds(b,{padding:[8,8]});map.setMaxBounds(b.pad(.4));leg();
+ const TC={};
+ const lay={
+  cPuntos:L.layerGroup(GPd.puntos.map(p=>L.circleMarker([p.lat,p.lon],{radius:7,color:'#fff',weight:2,fillColor:'#1F2A44',fillOpacity:.95}).bindTooltip(`<b>${p.tipo}</b><br>${p.vereda}${p.anio?' · '+p.anio:''}`))),
+  cSiata:L.layerGroup(GPd.siata.map(p=>L.circleMarker([p.lat,p.lon],{radius:8,color:'#fff',weight:2,fillColor:'#2B66B0',fillOpacity:1}).bindTooltip(`<b>SIATA · ${p.red}</b><br>${p.nombre}`))),
+  cObras:L.layerGroup(GPd.obras.map(p=>L.marker([p.lat,p.lon],{icon:L.divIcon({className:'',html:'<div class="gp-obra"></div>',iconSize:[22,19],iconAnchor:[11,19]})}).bindTooltip(`<b>${p.obra}</b><br>${p.estado} · ${p.sector}`))),
+  cHid:L.layerGroup(GPd.hidrantes.map(p=>L.circleMarker([p.lat,p.lon],{radius:4,color:'#fff',weight:1,fillColor:'#D7263D',fillOpacity:1}).bindTooltip(`<b>Hidrante</b> ${p.diam} mm<br>${p.estado} · circuito ${p.circuito}`)))};
+ Object.entries(lay).forEach(([id,g])=>{const cb=document.getElementById(id);if(cb.checked)g.addTo(map);cb.addEventListener('change',()=>cb.checked?g.addTo(map):map.removeLayer(g));});}
 $('#vSel').innerHTML='<option value="">— Elegir —</option><option value="urbano">Zona urbana (cabecera)</option>'+vk.slice().sort((a,b)=>nm[a].localeCompare(nm[b],'es')).map(k=>`<option value="${k}">${nm[k]}</option>`).join('');
 $('#vSel').addEventListener('change',e=>ficha(e.target.value||null));
 $$('[data-l]').forEach(c=>c.addEventListener('click',()=>{$$('[data-l]').forEach(x=>x.setAttribute('aria-pressed',x===c));cur=c.dataset.l;if(geo){brk();geo.setStyle(sty);leg();}}));
